@@ -1,0 +1,6 @@
+{
+  "name": "Trademarkapply — Slip Studio",
+  "description": "Precision IP India Trade Marks Registry Acknowledgement Slip replicator, editor, and print-ready PDF generator.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

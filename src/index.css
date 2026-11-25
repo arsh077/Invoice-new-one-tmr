@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-sans: 'Public Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #f8fafc;
+    color: #0f172a;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Exact IP India Acknowledgement Slip Print & Document Styling */
+.slip-paper {
+  width: 816px;
+  min-height: 1056px;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: 'Liberation Sans', Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
+.slip-grid-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 1.5px;
+  border: 0.75px solid #444444;
+  background-color: #ffffff;
+}
+
+.slip-grid-table th,
+.slip-grid-table td {
+  border: 0.75px solid #444444;
+  padding: 3px 4px;
+  font-size: 9.8px;
+  line-height: 1.32;
+  font-weight: 400;
+  color: #000000;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.slip-grid-table thead th {
+  white-space: nowrap;
+}
+
+@media print {
+  @page {
+    size: letter portrait;
+    margin: 0;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only-container {
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: #ffffff !important;
+    overflow: visible !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .slip-zoom-wrapper {
+    transform: none !important;
+    width: 816px !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+  }
+
+  .slip-paper {
+    box-shadow: none !important;
+    border: none !important;
+    width: 816px !important;
+    min-height: 1056px !important;
+    page-break-after: avoid;
+  }
+}
