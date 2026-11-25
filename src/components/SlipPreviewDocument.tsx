@@ -75,19 +75,32 @@ export const SlipPreviewDocument: React.FC<SlipPreviewDocumentProps> = ({
           {/* Left: Registry Branch Address */}
           <div
             style={{
-              fontSize: '13.8px',
-              lineHeight: 1.28,
+              fontFamily: 'Arial, Helvetica, sans-serif',
+              fontSize: '14px',
+              fontWeight: 400,
+              lineHeight: 1.24,
               color: '#000000',
               paddingTop: '12px',
-              fontWeight: 500,
-              WebkitTextStroke: '0.16px #000000',
+              maxWidth: '225px',
             }}
           >
             <div>{document_metadata.authority_name},</div>
             <div>{document_metadata.registry_address.building},</div>
-            <div>{document_metadata.registry_address.landmark_1},</div>
-            <div>{document_metadata.registry_address.landmark_2},</div>
-            <div>{document_metadata.registry_address.city_state_pin}</div>
+            {document_metadata.registry_address.landmark_2.trim() ? (
+              <>
+                {document_metadata.registry_address.landmark_1.trim() && (
+                  <div>{document_metadata.registry_address.landmark_1},</div>
+                )}
+                <div>{document_metadata.registry_address.landmark_2},</div>
+                <div>{document_metadata.registry_address.city_state_pin}</div>
+              </>
+            ) : (
+              <div>
+                {document_metadata.registry_address.landmark_1.trim()
+                  ? `${document_metadata.registry_address.landmark_1}, ${document_metadata.registry_address.city_state_pin}`
+                  : document_metadata.registry_address.city_state_pin}
+              </div>
+            )}
           </div>
 
           {/* Center: State Emblem of India */}
@@ -287,7 +300,7 @@ export const SlipPreviewDocument: React.FC<SlipPreviewDocumentProps> = ({
           </tbody>
           <tfoot>
             <tr>
-              <td colSpan={6} style={{ padding: '7px 5px' }}>
+              <td colSpan={6} style={{ padding: '8px 5px' }}>
                 <div
                   style={{
                     display: 'flex',
@@ -303,14 +316,16 @@ export const SlipPreviewDocument: React.FC<SlipPreviewDocumentProps> = ({
                 colSpan={2}
                 style={{
                   textAlign: 'right',
-                  padding: '4px 6px',
+                  padding: '6px 6px',
                   whiteSpace: 'nowrap',
                 }}
               >
                 <span>Total : </span>
-                <span style={{ fontSize: '16px', lineHeight: 1 }}>₹</span>
+                <span style={{ fontSize: '17px', lineHeight: 1, marginLeft: '2px' }}>
+                  ₹
+                </span>
               </td>
-              <td className="tabular-nums" style={{ padding: '4px 5px' }}>
+              <td className="tabular-nums" style={{ padding: '6px 5px' }}>
                 {totalAmount}
               </td>
             </tr>

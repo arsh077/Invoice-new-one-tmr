@@ -62,8 +62,8 @@ export const REGISTRY_ADDRESS_BY_BRANCH: Record<BranchName, RegistryAddress> = {
   },
   MUMBAI: {
     building: 'Boudhik Sampada Bhawan',
-    landmark_1: 'S.M. Road, Antop Hill',
-    landmark_2: 'Near Dosti Acres Complex',
+    landmark_1: 'S. M. Road, Antop Hill',
+    landmark_2: '',
     city_state_pin: 'Mumbai-400037',
   },
   DELHI: {

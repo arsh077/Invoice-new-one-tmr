@@ -39,14 +39,22 @@
 .slip-grid-table {
   width: 100%;
   border-collapse: separate;
-  border-spacing: 1.5px;
-  border: 0.75px solid #444444;
+  border-spacing: 2px;
+  border: 1px solid #808080;
+  border-top-color: #b8b8b8;
+  border-left-color: #b8b8b8;
+  border-right-color: #6b6b6b;
+  border-bottom-color: #6b6b6b;
   background-color: #ffffff;
 }
 
 .slip-grid-table th,
 .slip-grid-table td {
-  border: 0.75px solid #444444;
+  border: 1px solid #808080;
+  border-top-color: #6b6b6b;
+  border-left-color: #6b6b6b;
+  border-right-color: #c2c2c2;
+  border-bottom-color: #c2c2c2;
   padding: 3px 4px;
   font-size: 9.8px;
   line-height: 1.32;
